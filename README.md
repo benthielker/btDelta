@@ -70,7 +70,7 @@ The current hierarchical formats are not well suited to manual recording of mult
 changes to an object, as there is no way of specifying sequentiality of changes.
 
 Future plans involve moving to a hybrid of this structure and a *JSON-patch* style, so
-changes can be described sequentially, yet will not lose the benefit which current format
+changes can be described sequentially, yet will not lose the benefit the current format
 has when dealing with many changes within the same deeply nested path.
 
 The result should be lighter weight than the current format and currently available
