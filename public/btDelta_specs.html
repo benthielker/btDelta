@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" ng-app="BtGit" ng-controller="BtGitIndexCtrl">
+<head>
+	<meta charset="utf-8">
+	<title>btDelta Spec Runner (Jasmine)</title>
+	<link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.1/jasmine_favicon.png">
+	<link rel="stylesheet" type="text/css" href="lib/jasmine-1.3.1/jasmine.css">
+	
+	<script src="lib/jasmine-1.3.1/jasmine.js"></script>
+	<script src="lib/jasmine-1.3.1/jasmine-html.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="lib/jasmine-jquery-1.3.1.js"></script>
+	
+	<script src='btClass.min.js'></script>
+	<script src='btDelta.min.js'></script>
+	
+	<script src='btDelta_specs.js'></script>
+	
+	<script type="text/javascript">
+		(function() {
+			var jasmineEnv = jasmine.getEnv();
+			jasmineEnv.updateInterval = 1000;
+
+			var htmlReporter = new jasmine.HtmlReporter();
+
+			jasmineEnv.addReporter(htmlReporter);
+
+			jasmineEnv.specFilter = function(spec) {
+				return htmlReporter.specFilter(spec);
+			};
+
+			var currentWindowOnload = window.onload;
+
+			window.onload = function() {
+				if (currentWindowOnload) {
+					currentWindowOnload();
+				}
+				execJasmine();
+			};
+
+			function execJasmine() {
+				jasmineEnv.execute();
+			}
+
+		})();
+	</script>
+</head>
+
+<body>
+	<div id="elements">
+		<b id="one"></b>
+		<b class="two"></b>
+		<b class="two"></b>
+		<b class="two"></b>
+	</div>
+</html>
