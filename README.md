@@ -35,33 +35,33 @@ method.
 Instantiate the `btDelta.delta1d` class, and use the `compare` method to automatically
 detected changes between old and new objects...
 ````js
-    var delta1d = new btDelta.delta1d();
-    var delta = delta1d.compare( oldObj, newObj );
+var delta1d = new btDelta.delta1d();
+var delta = delta1d.compare( oldObj, newObj );
 ````
 
 ### Applying a 1d forward-only delta:
 Use the `applyDeltaToObject` method to apply a delta to the old object to reproduce the
 new object...
 ````js
-    var delta1d = new btDelta.delta1d();
-    var newObj = delta1d.applyDeltaToObj( delta, oldObj );
+var delta1d = new btDelta.delta1d();
+var newObj = delta1d.applyDeltaToObj( delta, oldObj );
 ````
 
 ### Creating/applying a 2d reversible delta:
 For reversibility instantiate the `btDelta.delta2d` class instead.
 ````js
-    var delta2d = new btDelta.delta2d();
-    var delta = delta2d.compare( oldObj, newObj );
-    ...
-    var newObj = delta2d.applyDeltaToObj( delta, oldObj );
+var delta2d = new btDelta.delta2d();
+var delta = delta2d.compare( oldObj, newObj );
+...
+var newObj = delta2d.applyDeltaToObj( delta, oldObj );
 ````
 
 ### Reversing a 2d delta:
 Pass `true` in the last parameter of the `applyDeltaToObject` method to apply a delta in
 reverse...
 ````js
-    var delta2d = new btDelta.delta2d();
-    var oldObj = delta1d.applyDeltaToObj( delta, newObj, true );
+var delta2d = new btDelta.delta2d();
+var oldObj = delta1d.applyDeltaToObj( delta, newObj, true );
 ````
 
 
